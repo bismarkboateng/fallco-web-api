@@ -1,20 +1,25 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+
 class Rep(models.Model):
     name = models.CharField(max_length=200)
     RepId = models.IntegerField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Rep"
 
     def __str__(self):
         return f"{self.name}"
-
+    
 
 
 
 class Article(models.Model):
     title = models.CharField(max_length=700)
     content = models.TextField()
-    # add an image field here after installing pillow
+    article_image = models.ImageField(default="images")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -31,6 +36,8 @@ class LectureRoom(models.Model):
     building_name = models.CharField(max_length=600)
     is_available = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name_plural = "LectureRoom"
 
     def __str__(self):
         return f"{self.class_room} - {self.class_size}"
