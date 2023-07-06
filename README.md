@@ -7,7 +7,7 @@ API System for faculty Web Application
 <br />
 <h5>Installation</h5>
 start by cloning the project
-<br />
+
 ```
   git clone https://github.com/bismarkboateng/fallco-web-api.git
   cd fallco-web-api
