@@ -12,3 +12,9 @@ class ArticleListCreateView(generics.ListCreateAPIView):
 class LectureRoomListView(generics.ListAPIView):
     queryset = LectureRoom.objects.all()
     serializer_class = LectureRoomSerializer
+
+
+class ArticleDetailView(generics.RetrieveAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    lookup_field = "id"

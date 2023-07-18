@@ -19,7 +19,7 @@ class Rep(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=700)
     content = models.TextField()
-    article_image = models.ImageField(default="images")
+    article_image = models.ImageField(default="images/")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
